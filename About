@@ -1,0 +1,92 @@
+About the Petition App by Catherine McMahon
+github project: https://github.com/CatherineMcMahon/Petition
+
+To Do:
+- Set up change.org API
+- Timeline Screen w/ change.org petitions
+- 'sign' petitions
+- 'share' petitions to facebook, twitter, email, etc.
+- login screen
+- sign up screen
+- enter as guest
+- user profile screen
+- settings screen
+- polish features and transitions between screens
+- (extra) messaging system/ discussion about petitions
+
+# Objective
+
+This app makes it easy for anyone to learn about and take action on something that matters.
+
+# Audience
+
+This app will appeal to those interested in activism and current users of online petitions such as change.org/etc. Hopefully, with additional features, users can tag petitions, share activism on social media, learn historical context relating to petitions and message with sub-communities of users.
+
+Perhaps, gamification or a more social aspect (ability to follow users, their petitions, interests...) can engage users and outsiders to activism.
+
+# Experience
+
+
+Apps that I'm drawing inspiration from are
+
+# Technical
+
+### External Services
+
+
+https://petitions.whitehouse.gov/how-why/we-people-api
+
+https://www.change.org/developers
+
+Add on features: Wikipedia?
+
+
+### Screens
+
+GUIDE: VC = View Controller
+
+'button' = button
+
+-> = transition to different screen (i.e. 'login' -> Login VC)
+
+
+
+Start VC:
+
+
+'sign up' -> Sign up VC -> Timeline VC
+
+'login' -> Login VC -> Timeline VC
+
+'browse as guest' -> Timeline VC
+
+
+
+Timeline VC:
+
+'like'
+
+'share' -> share to social media...
+
+'sign' -> sign petition + more info.
+
+'more' -> more screen
+
+
+
+### View/View Controller Scenes
+
+### Data Models
+
+
+# MVP Milestones
+
+Week 4: Use API + 'Explore' Screen + test
+
+Week 5: User profile Screen + Polish 'Explore' Screen + test
+
+Week 6:
+
+Week 7:
+
+Week 8:
