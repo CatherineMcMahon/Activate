@@ -2,17 +2,20 @@ About the Petition App by Catherine McMahon
 github project: https://github.com/CatherineMcMahon/Petition
 
 To Do:
-- Set up change.org API
-- Timeline Screen w/ change.org petitions
-- 'sign' petitions
+- Timeline Screen w/ white house petitions (try change.org later)
+- 'sign' petitions feature
 - 'share' petitions to facebook, twitter, email, etc.
 - login screen
 - sign up screen
-- enter as guest
+- enter as guest -> timeline
+- settings screen 
 - user profile screen
-- settings screen
 - polish features and transitions between screens
 - (extra) messaging system/ discussion about petitions
+
+
+Timeline Screen:
+- cell, view, search button, setting, label on top, in the view/cell: title (label), desc (lable), signatures gotten out of total (label)
 
 # Objective
 
