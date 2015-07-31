@@ -19,4 +19,13 @@ struct Petition
         self.body = body
         self.signature = signature
     }
+    
+//    func ==(lhs: Self, rhs: Self) -> Bool {
+    
+//        return (lhs.title==rhs.title && lhs.body==rhs.body && lhs.signature==rhs.signature)
+//    }
+//    
+//    func ==(lhs: Petition, rhs: Petition) -> Bool {
+//        return lhs.title == rhs.title && lhs.body == rhs.body
+//    }
 }
