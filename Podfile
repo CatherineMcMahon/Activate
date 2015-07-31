@@ -4,6 +4,7 @@
 use_frameworks!
 
 target 'Petition' do
+    pod 'Bolts'
     pod 'Parse'
     pod 'ParseUI'
     pod 'FBSDKCoreKit'
