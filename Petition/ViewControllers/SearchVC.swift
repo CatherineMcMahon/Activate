@@ -15,7 +15,7 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var data                     = [Search]()
+    var data                     = [Petition]()
     
     var searchText               = ""
     
@@ -30,57 +30,74 @@ class SearchVC: UIViewController {
         search()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "searchToContentVC") {
+            var something                    = segue.destinationViewController as! ContentVC
+            
+            if let cell                      = sender as? UITableViewCell {
+                if let indexPath                 = tableView.indexPathForCell(cell) {
+                    let petition                     = data[indexPath.row]
+                    something.petition               = petition
+                }
+            }
+        }
+    }
+    
+
+    
     func search() {
         println(searchBar.text)
         
-        let urlPath                  = "https://api.whitehouse.gov/v1/petitions.json?limit=10&offset=0&body=\(searchText)"
-        let url                      = NSURL(string: urlPath)
-        let session                  = NSURLSession.sharedSession()
-        
-        if let url                   = url {
-            let task                     = session.dataTaskWithURL(url, completionHandler:
-                {data, response, error -> Void in
-                    println("Task completed")
-                    
-                    if(error != nil) {
-                        println(error.localizedDescription)
-                    }
-                    var err: NSError?
-                    
-                    if let jsonResult            = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as? NSDictionary {
-                        if(err != nil) {
-                            println("JSON Error \(err!.localizedDescription)")
-                        }
+        if !searchBar.text.isEmpty {
+            
+            let urlPath                  = "https://api.whitehouse.gov/v1/petitions.json?limit=10&offset=0&body=\(searchText)"
+            let url                      = NSURL(string: urlPath)
+            let session                  = NSURLSession.sharedSession()
+            
+            if let url                   = url {
+                let task                     = session.dataTaskWithURL(url, completionHandler:
+                    {data, response, error -> Void in
+                        println("Task completed")
                         
-                        var newData                    = [Search]()
-                        println(jsonResult)
-                        if let results: NSArray      = jsonResult["results"] as? NSArray {
-                            
-                            for result in results {
-                                
-                                if let title                 = result["title"] as? String, body = result["body"] as?  String {
-                                    
-                                    let id: String
-                                    if let stringId = result["id"] as? String {
-                                        id = stringId
-                                    } else {
-                                        id = String((result["id"] as! Int))
-                                    }
-                                    let search                   = Search(petitionId: id, title: title, body: body)
-                                    newData.append(search)
-                                    
-                                }
+                        if(error != nil) {
+                            println(error.localizedDescription)
+                        }
+                        var err: NSError?
+                        
+                        if let jsonResult            = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as? NSDictionary {
+                            if(err != nil) {
+                                println("JSON Error \(err!.localizedDescription)")
                             }
                             
+                            var newData                    = [Petition]()
+                            println(jsonResult)
+                            if let results: NSArray      = jsonResult["results"] as? NSArray {
+                                
+                                for result in results {
+                                    
+                                    if let title                 = result["title"] as? String, body = result["body"] as?  String {
+                                        
+                                        let id: String
+                                        if let stringId = result["id"] as? String {
+                                            id = stringId
+                                        } else {
+                                            id = String((result["id"] as! Int))
+                                        }
+                                        let search                   = Petition(title: title, body: body, petitionId: id)
+                                        newData.append(search)
+                                    }
+                                }
+                                
+                            }
+                            dispatch_async(dispatch_get_main_queue(),{
+                                self.data = newData
+                                self.tableView.reloadData()
+                            })
+                            
                         }
-                        dispatch_async(dispatch_get_main_queue(),{
-                            self.data = newData
-                            self.tableView.reloadData()
-                        })
-                        
-                    }
-            })
-            task.resume()
+                })
+                task.resume()
+            }
         }
     }
 }
@@ -107,7 +124,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         cell.title.text              = item.title
         cell.desc.text               = item.body
         //    cell.created.text            = item.created
-//            cell.signatures.text         = item.signatures
+        //            cell.signatures.text         = item.signatures
         //    cell.signaturesNeeded.text   = item.signaturesNeeded
         //    cell.signatureThreshold.text = item.signatureThreshold
         

@@ -10,22 +10,11 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     let kCellIdentifier: String      = "ContentViewCell"
     var timelineComponent: TimelineComponents<Petition, TimelineVC>!
     
-    var pId:String?
+    @IBOutlet var tableView: UITableView!
+    let defaultRange                 = 0...4
+    let additionalRangeSize          = 5
     
-    func randColor() -> UIColor {
-        var r                            = CGFloat(( CGFloat(arc4random()) % 100 + 30) / 255)
-        var g                            = CGFloat(( CGFloat(arc4random()) % 100 + 30) / 255)
-        var b                            = CGFloat(( CGFloat(arc4random()) % 100 + 30) / 255)
-    
-        if(r == b && r == g && g == b) {
-            r                                = CGFloat( CGFloat(arc4random()) % 256 / 255.0)
-        }
-    
-        var cellColor: UIColor = UIColor(red: r, green: g, blue: b, alpha: 1.0)
-        
-        return cellColor
-        }
-    
+    var tableData                    = []
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "timelineCellToTimelineContentVC") {
@@ -40,21 +29,6 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         }
     }
     
-    // MARK: Scroll to top
-    @IBOutlet weak var scrollToTop: UIButton!
-    
-    @IBAction func toTop() {
-        if (timelineComponent.content.count > 0 ) {
-            var top = NSIndexPath(forRow: Foundation.NSNotFound, inSection: 0);
-            self.tableView.scrollToRowAtIndexPath(top, atScrollPosition: UITableViewScrollPosition.Top, animated: true);
-        }
-    }
-    
-    @IBOutlet var tableView: UITableView!
-    let defaultRange                 = 0...4
-    let additionalRangeSize          = 5
-    
-    var tableData                    = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,21 +78,20 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         
         cell.contentView.backgroundColor = cellColor
         
-        
         //        cell.contentView.backgroundColor = UIColor(hue: 1.0, saturation: 0.3, brightness: 0.5, alpha: 1.0)
         
         return cell
     }
+
     
     func loadInRange(range: Range<Int>, completionBlock: ([Petition]?) -> Void) {
         
-        let urlPath                      = "https://api.whitehouse.gov/v1/petitions.json?limit=\(range.endIndex-range.startIndex)&offset=\(range.startIndex)"
+        let urlPath                      = "https://api.whitehouse.gov/v1/petitions.json?isPublic=1&isSignable=1&limit=\(range.endIndex-range.startIndex)&offset=\(range.startIndex)"
         
         let url                          = NSURL(string: urlPath)
         let session                      = NSURLSession.sharedSession()
         let task                         = session.dataTaskWithURL(url!, completionHandler:
             {data, response, error -> Void in
-                println("Task completed")
                 
                 if(error != nil) {
                     println(error.localizedDescription)
@@ -140,12 +113,13 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                                 } else {
                                     id = String((result["id"] as! Int))
                                 }
-                                println("----" + title)
                                 let petition                     = Petition(title: title, body: body, petitionId: id)
                                 arr.append(petition)
                             }
                         }
-                        completionBlock(arr)
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            completionBlock(arr)
+                        })
                     }
                 }
         })

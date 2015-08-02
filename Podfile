@@ -16,6 +16,10 @@ target 'Petition' do
     pod 'BRFlabbyTable', '~> 1.0'
     pod 'VBFPopFlatButton'
     pod 'RKDropdownAlert'
+    pod 'JDFPeekaboo'
+    pod 'ExpandingTableView'
+
+pod 'ASOAnimatedButton'
 	
 end
 

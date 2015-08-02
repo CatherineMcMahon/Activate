@@ -8,6 +8,9 @@
 import Foundation
 import ParseUI
 import Parse
+import ASOAnimatedButton
+
+
 
 class ContentVC: UIViewController {
     
@@ -18,14 +21,33 @@ class ContentVC: UIViewController {
     var lastName: String?
     var zipcode: String?
     
+    
+    @IBOutlet var menuItemView: BounceButtonView!
+    
+    //    @IBOutlet var menuButton2: ASOTwoStateButton!
+    
+    @IBOutlet weak var menuButton: ASOTwoStateButton!
+    
+    @IBAction func moreButtonPressed (sender: ASOTwoStateButton) {
+        //self.view.addSubview(BounceButtonView())
+        //self.theView.hidden = false
+        
+        if (!sender.isOn) {
+            self.menuButton.addCustomView(self.menuItemView)
+            self.menuItemView!.expandWithAnimationStyle(ASOAnimationStyleRiseConcurrently)
+        }
+        else {
+            self.menuItemView!.collapseWithAnimationStyle(ASOAnimationStyleRiseConcurrently)
+            self.menuButton.removeCustomView(self.menuItemView, interval: self.menuItemView!.collapsedViewDuration.doubleValue)
+       }
+    }
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
     @IBOutlet weak var detailTitle: UILabel!
     @IBOutlet weak var detailBody: UILabel!
-    
-    @IBOutlet var tableView: UIView!
     
     @IBAction func back () {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -37,74 +59,30 @@ class ContentVC: UIViewController {
     
     func petitionDetail() {
         if(detailTitle != nil && detailBody != nil) {
-            detailTitle.text   = petition!.title
-            detailBody.text    = petition!.body
-            petitionId         = petition!.petitionId
+            detailTitle.text          = petition!.title
+            detailBody.text           = petition!.body
+            petitionId                = petition!.petitionId
         }
     }
     
+    @IBOutlet var tableView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.menuItemView.hidden = true
+        
+//        tableView.backgroundColor = RandomColor.color
+        
+        self.menuButton.initAnimationWithFadeEffectEnabled(true)
         petitionDetail()
-    }
-    
-    // MARK: Sign Petition
-    @IBAction func sign(sender: UIButton) {
-        if let currentUser = PFUser.currentUser() {
-            signPetition()
-        } else {
-            //prompt user to sign up or login
-            println("user is not signed in; cannot sign petition")
-        }
-    }
-    
-    func signPetition() -> Bool {
         
-        if let currentUser = PFUser.currentUser() {
-            email      = currentUser.email!
-            firstName     = (currentUser.objectForKey("firstName") as? String!)!
-            lastName       = (currentUser.objectForKey("lastName") as? String!)!
-            zipcode = (currentUser.objectForKey("zipcode") as? String!)!
-        }
+        var arrMenuItemButtons = [UIButton]()
         
-        var request        = NSMutableURLRequest(URL: NSURL(string: "https://api.whitehouse.gov/v1/signatures.json?api_key=tENvi3GKDSyP1CVV4uVX4iDdxXj5eNMtkbFMFFqM")!)
-        var session        = NSURLSession.sharedSession()
-        request.HTTPMethod = "POST"
+        // arrMenuItemButtons.append(self.menuItemView!.share)
         
-        var params         = ["petition_id": petitionId!, "email": email!, "firstName": firstName!, "last_name": lastName!, "zip": "94502" ] as Dictionary<String, String>
+        arrMenuItemButtons.append(self.menuItemView!.sign)
         
-        var err: NSError?
-        request.HTTPBody   = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        var task           = session.dataTaskWithRequest(request, completionHandler:
-            {data, response, error -> Void in
-                println("Response: \(response)")
-                var strData        = NSString(data: data, encoding: NSUTF8StringEncoding)
-                println("Body: \(strData)")
-                var err: NSError?
-                var json           = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as? NSDictionary
-                
-                if(err != nil) {
-                    println(err!.localizedDescription)
-                    let jsonStr        = NSString(data: data, encoding: NSUTF8StringEncoding)
-                    println("Error could not parse JSON: '\(jsonStr)'")
-                }
-                else {
+        self.menuItemView!.addBounceButtons(arrMenuItemButtons)
 
-                    if let parseJSON   = json {
-                        var status         = parseJSON["developerMessage"] as? Int
-                        println("Success: \(status)")
-                    }
-                    else {
-                        let jsonStr        = NSString(data: data, encoding: NSUTF8StringEncoding)
-                        println("Error could not parse JSON: \(jsonStr)")
-                    }
-                }
-        })
-        
-        task.resume()
-        return true
     }
 }

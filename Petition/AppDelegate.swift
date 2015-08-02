@@ -4,7 +4,7 @@
 import UIKit
 import Parse
 import ParseUI
-//import Mixpanel
+import Mixpanel
 
 
 @UIApplicationMain
@@ -16,12 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         //SpritzSDK.setClientID("0c8814ed065425eb0", clientSecret: "c4b203b9-645e-42b8-a3eb-d2f4a92f5ba8")
 
+        
+        Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+        
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("App launched")
         Parse.setApplicationId("ur7l8jOJEGaYnY5z9TOzEAr0M9eolCv7imLZqWNw", clientKey: "Fqy6Asqhc0dokvFVzIKhJmVTpn1UV8qsgq00rKVd")
 
-//        Mixpanel.sharedInstanceWithToken(03d88b8595c383af0bba420b4c054f41)
-//        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-//        mixpanel.track("App launched")
-        
         return true;
     }
 
