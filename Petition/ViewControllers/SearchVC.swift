@@ -15,17 +15,17 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var data = [Search]()
+    var data                     = [Search]()
     
-    var searchText = ""
+    var searchText               = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchBar.delegate = self
+        searchBar.delegate           = self
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.delegate           = self
+        tableView.dataSource         = self
         
         search()
     }
@@ -33,12 +33,12 @@ class SearchVC: UIViewController {
     func search() {
         println(searchBar.text)
         
-        let urlPath                 = "https://api.whitehouse.gov/v1/petitions.json?limit=10&offset=0&title=\(searchText)"
-        let url                     = NSURL(string: urlPath)
-        let session                 = NSURLSession.sharedSession()
+        let urlPath                  = "https://api.whitehouse.gov/v1/petitions.json?limit=10&offset=0&body=\(searchText)"
+        let url                      = NSURL(string: urlPath)
+        let session                  = NSURLSession.sharedSession()
         
-        if let url = url {
-            let task                    = session.dataTaskWithURL(url, completionHandler:
+        if let url                   = url {
+            let task                     = session.dataTaskWithURL(url, completionHandler:
                 {data, response, error -> Void in
                     println("Task completed")
                     
@@ -47,25 +47,34 @@ class SearchVC: UIViewController {
                     }
                     var err: NSError?
                     
-                    if let jsonResult           = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as? NSDictionary {
+                    if let jsonResult            = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as? NSDictionary {
                         if(err != nil) {
                             println("JSON Error \(err!.localizedDescription)")
                         }
                         
-                        self.data = []
+                        var newData                    = [Search]()
                         println(jsonResult)
-                        if let results: NSArray     = jsonResult["results"] as? NSArray {
+                        if let results: NSArray      = jsonResult["results"] as? NSArray {
                             
                             for result in results {
                                 
-                                //                            if let title                = result["title"] as? String, body = result["body"] as?  String, petitionId = result["id"] as? String, dateCreated = result["created"] as? String, signatures = result["signatureCount"] as? String, signaturesNeeded = result["signaturesNeeded"] as? String, signatureThreshold = result["signatureThreshold"] as? String {
-                                if let title                = result["title"] as? String {
-                                    let search                = Search(petitionId: "", title: title, body: "", dateCreated: "", signatures: "", signaturesNeeded: "", signatureThreshold: "")
-                                    self.data.append(search)
+                                if let title                 = result["title"] as? String, body = result["body"] as?  String {
+                                    
+                                    let id: String
+                                    if let stringId = result["id"] as? String {
+                                        id = stringId
+                                    } else {
+                                        id = String((result["id"] as! Int))
+                                    }
+                                    let search                   = Search(petitionId: id, title: title, body: body)
+                                    newData.append(search)
+                                    
                                 }
                             }
+                            
                         }
                         dispatch_async(dispatch_get_main_queue(),{
+                            self.data = newData
                             self.tableView.reloadData()
                         })
                         
@@ -74,12 +83,11 @@ class SearchVC: UIViewController {
             task.resume()
         }
     }
-    
 }
 
 extension SearchVC: UISearchBarDelegate {
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        self.searchText = searchText
+        self.searchText              = searchText
         
         search()
     }
@@ -92,11 +100,16 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SearchViewCell", forIndexPath: indexPath) as! SearchViewCell
+        let cell                     = tableView.dequeueReusableCellWithIdentifier("SearchViewCell", forIndexPath: indexPath) as! SearchViewCell
         
-        let item = data[indexPath.row]
+        let item                     = data[indexPath.row]
         
-        cell.postTitle.text = item.title
+        cell.title.text              = item.title
+        cell.desc.text               = item.body
+        //    cell.created.text            = item.created
+//            cell.signatures.text         = item.signatures
+        //    cell.signaturesNeeded.text   = item.signaturesNeeded
+        //    cell.signatureThreshold.text = item.signatureThreshold
         
         return cell
     }

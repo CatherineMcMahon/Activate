@@ -25,11 +25,7 @@ class LoginVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    @IBAction func back () {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+        
     @IBAction func done() {
         var userEmail                 = email.text
         var userPassword          = password.text
@@ -41,7 +37,7 @@ class LoginVC: UIViewController {
                 //                    println(PFUser.object()
                 
             } else {
-                println("**login ERROR**")
+                println("**login ERROR**") //Alert Controller to user
             }
         }
     }

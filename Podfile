@@ -14,8 +14,8 @@ target 'Petition' do
     pod 'Bond'
     pod 'Mixpanel'
     pod 'BRFlabbyTable', '~> 1.0'
-    # pod 'ios-process-button'
-    # pod 'SwiftyJSON', '~> 2.2.1'
+    pod 'VBFPopFlatButton'
+    pod 'RKDropdownAlert'
 	
 end
 

@@ -19,19 +19,21 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var password: UITextField!
     var objectId: String?
 //    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
-    @IBOutlet weak var backButton: UIButton!
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func back () {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func done(sender: AnyObject) {
+        if(firstName.text != nil && lastName.text != nil && zipcode.text != nil && email.text != nil && password != nil) {
+                signUp()
+        } else {
+            println("can't sign up. try again")
+        }
     }
     
-    @IBAction func done(sender: AnyObject) {
-
+    
+        func signUp() {
     var user                            = PFUser()
     user.username                       = email.text
     user.password                       = password.text
@@ -43,12 +45,10 @@ class SignUpVC: UIViewController {
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
-            if error == nil {
-                
+            if(succeeded == true) {
                 dispatch_async(dispatch_get_main_queue()) {
                     self.performSegueWithIdentifier("signUpToTimeline", sender: self)
                 }
-                
             } else {
                     println("**sign up ERROR**")
             }

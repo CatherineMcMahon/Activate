@@ -13,17 +13,10 @@ struct Search {
     var petitionId: String?
     var title: String?
     var body: String?
-    var dateCreated: String?
-    var signatures: String?
-    var signaturesNeeded: String?
-    var signatureThreshold: String?
     
-    init(petitionId: String?, title: String?, body: String?, dateCreated: String?, signatures: String?, signaturesNeeded: String?, signatureThreshold: String?) {
+    init(petitionId: String?, title: String?, body: String?) {
+    self.petitionId = petitionId
     self.title = title
     self.body = body
-    self.dateCreated = dateCreated
-    self.signatures = signatures
-    self.signaturesNeeded = signaturesNeeded
-    self.signatureThreshold = signatureThreshold
     }
 }
