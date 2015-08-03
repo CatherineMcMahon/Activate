@@ -48,10 +48,7 @@ class ContentVC: UIViewController {
     
     @IBOutlet weak var detailTitle: UILabel!
     @IBOutlet weak var detailBody: UILabel!
-    
-    @IBAction func back () {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
