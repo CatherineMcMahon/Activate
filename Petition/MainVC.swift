@@ -4,21 +4,20 @@
 //
 //  Created by Catherine on 7/15/15.
 //  Copyright (c) 2015 Catherine McMahon. All rights reserved.
+// test:
 //
 // PFUser.logout -> sets user to nil (log out button) Later
 
 import UIKit
 import Parse
+import SwiftyJSON
 
 class MainVC: UIViewController {
-    
+
     @IBOutlet weak var login: UIButton!
     @IBOutlet weak var signup: UIButton!
     @IBOutlet weak var guest: UIButton!
-    
-//    var LoginVC: PFLogInViewController! = PFLogInViewController()
-//    var SignUpVC: PFSignUpViewController! = PFSignUpViewController()
- 
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -29,5 +28,5 @@ class MainVC: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-    }
+        }
 }

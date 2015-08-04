@@ -4,6 +4,8 @@
 import UIKit
 import Parse
 import ParseUI
+//import Mixpanel
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Parse.setApplicationId("ur7l8jOJEGaYnY5z9TOzEAr0M9eolCv7imLZqWNw", clientKey: "Fqy6Asqhc0dokvFVzIKhJmVTpn1UV8qsgq00rKVd")
 
+//        Mixpanel.sharedInstanceWithToken(03d88b8595c383af0bba420b4c054f41)
+//        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+//        mixpanel.track("App launched")
+        
         return true;
     }
 

@@ -8,24 +8,15 @@
 
 import Foundation
 
-struct Petition
-{
+struct Petition {
+    
     var title: String?
     var body: String?
-    var signature: String?
+    var id: String?
     
-    init(title: String?, body: String?, signature: String?) {
+    init(title: String?, body: String?, id: String?) {
         self.title = title
         self.body = body
-        self.signature = signature
+        self.id = id
     }
-    
-//    func ==(lhs: Self, rhs: Self) -> Bool {
-    
-//        return (lhs.title==rhs.title && lhs.body==rhs.body && lhs.signature==rhs.signature)
-//    }
-//    
-//    func ==(lhs: Petition, rhs: Petition) -> Bool {
-//        return lhs.title == rhs.title && lhs.body == rhs.body
-//    }
 }

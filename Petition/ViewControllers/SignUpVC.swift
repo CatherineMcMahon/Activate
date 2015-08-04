@@ -8,52 +8,55 @@
 import Foundation
 import UIKit
 import Parse
+import ParseUI
 
 class SignUpVC: UIViewController {
-    
+
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
-    @IBOutlet weak var address: UITextField!
-    @IBOutlet weak var city: UITextField!
-    @IBOutlet weak var state: UITextField!
-    @IBOutlet weak var country: UITextField!
     @IBOutlet weak var zipcode: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+//    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
+    @IBOutlet weak var backButton: UIButton!
+    
+    @IBAction func back () {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     @IBAction func done(sender: AnyObject) {
-        var user = PFUser()
-        user.password = password.text
-        user.email = email.text
-        // other fields can be set just like with PFObject
-        user["firstName"] = firstName.text
-        user["lastName"] = lastName.text
-        user["address"] = address.text
-        user["city"] = city.text
-        user["state"] = state.text
-        user["country"] = country.text
-        user["zipcode"] = zipcode.text
+    
+    var user                            = PFUser()
+    user.username                       = email.text
+    user.password                       = password.text
+    user.email                          = email.text
+    user["firstName"]                   = firstName.text
+    user["lastName"]                    = lastName.text
+    user["zipcode"]                     = zipcode.text
+
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
-            if let error = error {
-                let errorString = error.userInfo?["error"] as? NSString
-                // Show the errorString somewhere and let the user try again.
+            if error == nil {
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.performSegueWithIdentifier("signUpToTimeline", sender: self)
+                }
+                
             } else {
-                // use the app!
+                    println("**sign up ERROR**")
             }
         }
     }
-
-    var actInd: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0,0,150,150)) as UIActivityIndicatorView
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+                super.viewDidLoad()
+                
     }
     
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+                super.didReceiveMemoryWarning()
+                
     }
 }

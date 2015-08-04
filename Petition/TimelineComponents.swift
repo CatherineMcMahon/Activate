@@ -129,6 +129,7 @@ public class TimelineComponents <T, S: TimelineComponentTarget where S.ContentTy
             self.content = content! as [T]
             self.refreshControl.endRefreshing()
             
+            // MARK: time 
             UIView.transitionWithView(self.target!.tableView,
                 duration: 0.35,
                 options: .TransitionCrossDissolve,

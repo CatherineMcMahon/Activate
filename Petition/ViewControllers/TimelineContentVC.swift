@@ -4,16 +4,34 @@
 //
 //  Created by Catherine on 7/30/15.
 //  Copyright (c) 2015 Catherine McMahon. All rights reserved.
-//  api_key=FaJcrs2u4kZcKf0lnYgY0WYTEhfek8qBBxjOyUzQ
 
 import Foundation
 
 class TimelineContentVC: UIViewController {
 
-    // White House 'sign'
-    func sign(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
+    @IBOutlet weak var detailTitle: UILabel!
+    @IBOutlet weak var detailBody: UILabel!
     
-        var request        = NSMutableURLRequest(URL: NSURL(string: "https://api.whitehouse.gov/v1/signatures.json?api_key=FaJcrs2u4kZcKf0lnYgY0WYTEhfek8qBBxjOyUzQ")!)
+    @IBAction func back () {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+    @IBAction func sign(sender: UIButton) {
+        signPetition()
+    }
+    
+    // White House API 'sign' 
+    func signPetition() -> Bool {
+    
+        var request        = NSMutableURLRequest(URL: NSURL(string: "https://api.whitehouse.gov/v1/signatures.json?api_key=tENvi3GKDSyP1CVV4uVX4iDdxXj5eNMtkbFMFFqM")!)
         var session        = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
 
@@ -22,7 +40,7 @@ class TimelineContentVC: UIViewController {
 
         var err: NSError?
         request.HTTPBody   = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type") // ???
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type") // ??? what is this doing
         request.addValue("application/json", forHTTPHeaderField: "Accept")
 
         var task           = session.dataTaskWithRequest(request, completionHandler:
@@ -43,12 +61,12 @@ class TimelineContentVC: UIViewController {
                 // The JSONObjectWithData constructor didn't return an error. But, we should still
                 // check and make sure that json has a value using optional binding.
         if let parseJSON   = json {
-                    // Okay, the parsedJSON is here, let's get the value for 'success' out of it
-        var success        = parseJSON["success"] as? Int
-                    println("Succes: \(success)")
+                    // parsedJSON is here, let's get the value for 'success' out of it
+        var status        = parseJSON["developerMessage"] as? Int
+                    println("Success: \(status)")
                 }
                 else {
-                    // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
+                    // json object = nil
         let jsonStr        = NSString(data: data, encoding: NSUTF8StringEncoding)
                     println("Error could not parse JSON: \(jsonStr)")
                 }
