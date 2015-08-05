@@ -12,7 +12,6 @@ class ContentViewCell: UITableViewCell {
     
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var postDesc: UILabel!
-    @IBOutlet weak var postId: UILabel!
     
     override func setSelected(selected: Bool, animated: Bool) {
        // super.setSelected(selected, animated: animated)

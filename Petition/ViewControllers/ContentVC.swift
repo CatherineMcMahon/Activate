@@ -1,5 +1,5 @@
 //
-//  TimelineContentVC.swift
+//  ContentVC.swift
 //  Petition
 //
 //  Created by Catherine on 7/30/15.
@@ -7,11 +7,15 @@
 
 import Foundation
 
-class TimelineContentVC: UIViewController {
+class ContentVC: UIViewController {
 
     @IBOutlet weak var detailTitle: UILabel!
     @IBOutlet weak var detailBody: UILabel!
     
+    @IBOutlet var tableView: UIView!
+    
+    var courseName = [String]()
+        
     @IBAction func back () {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -30,17 +34,17 @@ class TimelineContentVC: UIViewController {
     
     // White House API 'sign' 
     func signPetition() -> Bool {
-    
+        
         var request        = NSMutableURLRequest(URL: NSURL(string: "https://api.whitehouse.gov/v1/signatures.json?api_key=tENvi3GKDSyP1CVV4uVX4iDdxXj5eNMtkbFMFFqM")!)
         var session        = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
 
-        var params         = ["petition_id":"thisIsAPetitionID", "email":"thisIsAnEmail", "first_name":"Catherine", "last_name":"McMahon", "zip":"ziiiiipycode"] as Dictionary<String, String>
+        var params         = ["petition_id": "test", "email":"thisIsAnEmail", "first_name":"Catherine", "last_name":"McMahon", "zip":"ziiiiipycode"] as Dictionary<String, String>
         // CHANGE values to parse User info.
 
         var err: NSError?
         request.HTTPBody   = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type") // ??? what is this doing
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
 
         var task           = session.dataTaskWithRequest(request, completionHandler:

@@ -12,11 +12,9 @@ struct Petition {
     
     var title: String?
     var body: String?
-    var id: String?
     
-    init(title: String?, body: String?, id: String?) {
+    init(title: String?, body: String?) {
         self.title = title
         self.body = body
-        self.id = id
     }
 }

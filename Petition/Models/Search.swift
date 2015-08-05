@@ -10,6 +10,7 @@ import Foundation
 
 struct Search {
     
+    var petitionId: String?
     var title: String?
     var body: String?
     var dateCreated: String?
@@ -17,12 +18,12 @@ struct Search {
     var signaturesNeeded: String?
     var signatureThreshold: String?
     
-//    init(title: String?, body: String?, dateCreated: String?, signatures: String?, signaturesNeeded: String?, signatureThreshold: String?)
-//    
-//    self.title = title
-//    self.body = body
-//    self.dateCreated = dateCreated
-//    self.signatures = signatures
-//    self.signaturesNeeded = signaturesNeeded
-//    self.signatureThreshold = signatureThreshold
+    init(petitionId: String?, title: String?, body: String?, dateCreated: String?, signatures: String?, signaturesNeeded: String?, signatureThreshold: String?) {
+    self.title = title
+    self.body = body
+    self.dateCreated = dateCreated
+    self.signatures = signatures
+    self.signaturesNeeded = signaturesNeeded
+    self.signatureThreshold = signatureThreshold
+    }
 }

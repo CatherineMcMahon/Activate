@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C11869F31B6AC589003DAB76 /* TimelineContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11869F21B6AC589003DAB76 /* TimelineContentVC.swift */; };
+		C11869F31B6AC589003DAB76 /* ContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11869F21B6AC589003DAB76 /* ContentVC.swift */; };
 		C14C6CBB1B6FEE1F002AA905 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C6CBA1B6FEE1F002AA905 /* MoreVC.swift */; };
 		C14C6CBD1B6FEE37002AA905 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C6CBC1B6FEE37002AA905 /* SearchVC.swift */; };
 		C154A1F61B5ECCE3004DB4EC /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C154A1F51B5ECCE3004DB4EC /* SignUpVC.swift */; };
@@ -45,7 +45,7 @@
 		2058975F07DAB729FC48779C /* Pods-Petition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petition.release.xcconfig"; path = "Pods/Target Support Files/Pods-Petition/Pods-Petition.release.xcconfig"; sourceTree = "<group>"; };
 		35DC5A47462DDC6C7B91E9D9 /* Pods_Petition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Petition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EFCA16DD16457D6C8D4A76D /* Pods-Petition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Petition/Pods-Petition.debug.xcconfig"; sourceTree = "<group>"; };
-		C11869F21B6AC589003DAB76 /* TimelineContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineContentVC.swift; sourceTree = "<group>"; };
+		C11869F21B6AC589003DAB76 /* ContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentVC.swift; sourceTree = "<group>"; };
 		C14C6CBA1B6FEE1F002AA905 /* MoreVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		C14C6CBC1B6FEE37002AA905 /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		C154A1F51B5ECCE3004DB4EC /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -117,16 +117,15 @@
 			isa = PBXGroup;
 			children = (
 				C1FDFAD51B7085F60073C979 /* Main.storyboard */,
+				C15FDE901B57547600B77239 /* AppDelegate.swift */,
+				C15FDE991B57547600B77239 /* LaunchScreen.xib */,
 				C1FDFAD01B707D4E0073C979 /* Views */,
 				C1FDFAC91B707D420073C979 /* ViewCells */,
 				C19645F31B69907100C84E23 /* Helpers */,
 				C1D60ECB1B617C77007817D0 /* Models */,
 				C16980B91B58257300232415 /* ViewControllers */,
-				C15FDE901B57547600B77239 /* AppDelegate.swift */,
 				C15FDE971B57547600B77239 /* Images.xcassets */,
-				C15FDE991B57547600B77239 /* LaunchScreen.xib */,
 				C15FDE8E1B57547600B77239 /* Supporting Files */,
-				C1DD82481B695D11000E2EF6 /* TimelineComponents.swift */,
 			);
 			path = Petition;
 			sourceTree = "<group>";
@@ -134,6 +133,7 @@
 		C15FDE8E1B57547600B77239 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C1DD82481B695D11000E2EF6 /* TimelineComponents.swift */,
 				C15FDE8F1B57547600B77239 /* Info.plist */,
 				C1FC774B1B59B725008BBFBA /* Petition-Bridging-Header.h */,
 			);
@@ -160,11 +160,11 @@
 		C16980B91B58257300232415 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C15FDE921B57547600B77239 /* MainVC.swift */,
 				C154A1F51B5ECCE3004DB4EC /* SignUpVC.swift */,
 				C154A1F71B5ECD20004DB4EC /* LoginVC.swift */,
 				C1D60EC91B617B85007817D0 /* TimelineVC.swift */,
-				C15FDE921B57547600B77239 /* MainVC.swift */,
-				C11869F21B6AC589003DAB76 /* TimelineContentVC.swift */,
+				C11869F21B6AC589003DAB76 /* ContentVC.swift */,
 				C14C6CBA1B6FEE1F002AA905 /* MoreVC.swift */,
 				C14C6CBC1B6FEE37002AA905 /* SearchVC.swift */,
 			);
@@ -376,7 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1D60ECA1B617B85007817D0 /* TimelineVC.swift in Sources */,
-				C11869F31B6AC589003DAB76 /* TimelineContentVC.swift in Sources */,
+				C11869F31B6AC589003DAB76 /* ContentVC.swift in Sources */,
 				C1FDFAD21B707D6F0073C979 /* ContentView.swift in Sources */,
 				C19645F51B69909700C84E23 /* RandomColorExtension.swift in Sources */,
 				C15FDE931B57547600B77239 /* MainVC.swift in Sources */,
