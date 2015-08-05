@@ -13,12 +13,11 @@ class ContentVC: UIViewController {
     @IBOutlet weak var detailBody: UILabel!
     
     @IBOutlet var tableView: UIView!
-    
-    var courseName = [String]()
-        
+
     @IBAction func back () {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

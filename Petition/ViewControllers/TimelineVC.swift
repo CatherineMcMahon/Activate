@@ -23,15 +23,11 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             if let cell = sender as? UITableViewCell {
                 if let indexPath = tableView.indexPathForCell(cell) {
                     let petition = timelineComponent.content[indexPath.row]
-                    
+
 //                    something.petition = petition
                 }
             }
         }
-    }
-
-    func toPass() {
-        
     }
 
     @IBOutlet var tableView: UITableView!
