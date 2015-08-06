@@ -13,7 +13,9 @@ target 'Petition' do
     pod 'ConvenienceKit'
     pod 'Bond'
     pod 'Mixpanel'
-  # pod 'SwiftyJSON', '~> 2.2.1'
+    pod 'BRFlabbyTable', '~> 1.0'
+    # pod 'ios-process-button'
+    # pod 'SwiftyJSON', '~> 2.2.1'
 	
 end
 

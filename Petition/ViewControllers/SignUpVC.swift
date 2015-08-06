@@ -17,16 +17,21 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var zipcode: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    var objectId: String?
 //    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     @IBOutlet weak var backButton: UIButton!
+        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     @IBAction func back () {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func done(sender: AnyObject) {
-    
+
     var user                            = PFUser()
     user.username                       = email.text
     user.password                       = password.text
@@ -34,7 +39,7 @@ class SignUpVC: UIViewController {
     user["firstName"]                   = firstName.text
     user["lastName"]                    = lastName.text
     user["zipcode"]                     = zipcode.text
-
+    user.objectId = objectId
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
@@ -48,11 +53,6 @@ class SignUpVC: UIViewController {
                     println("**sign up ERROR**")
             }
         }
-    }
-    
-    override func viewDidLoad() {
-                super.viewDidLoad()
-                
     }
     
     override func didReceiveMemoryWarning() {

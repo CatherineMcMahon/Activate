@@ -10,7 +10,6 @@
 
 import UIKit
 import Parse
-import SwiftyJSON
 
 class MainVC: UIViewController {
 

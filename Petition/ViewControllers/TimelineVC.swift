@@ -9,22 +9,17 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     var cache                        = [String: UILabel]()
     let kCellIdentifier: String      = "ContentViewCell"
     var timelineComponent: TimelineComponents<Petition, TimelineVC>!
-    
-    var petitionId:String?
-    //MARK: return petition id
-    func getPetitionId() -> String? {
-        return petitionId
-    }
-    
+
+    var pId:String?
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "timelineCellToTimelineContentVC") {
-            var something = segue.destinationViewController as! ContentVC
-            
-            if let cell = sender as? UITableViewCell {
-                if let indexPath = tableView.indexPathForCell(cell) {
-                    let petition = timelineComponent.content[indexPath.row]
+    var something                    = segue.destinationViewController as! ContentVC
 
-//                    something.petition = petition
+    if let cell                      = sender as? UITableViewCell {
+    if let indexPath                 = tableView.indexPathForCell(cell) {
+    let petition                     = timelineComponent.content[indexPath.row]
+    something.petition               = petition
                 }
             }
         }
@@ -111,9 +106,9 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
 
     if let results: NSArray          = jsonResult["results"] as? NSArray {
                         for result in results {
-    if let title                     = result["title"] as? String, body = result["body"] as? String {
-        let petition                     = Petition(title: title, body: body)
-                                arr.append(petition)
+    if let title                     = result["title"] as? String, body = result["body"] as? String, petitionId = result["id"] as? String {
+    let petition                     = Petition(title: title, body: body, petitionId: petitionId)
+                                        arr.append(petition)
                                 completionBlock(arr)
                             }
         }

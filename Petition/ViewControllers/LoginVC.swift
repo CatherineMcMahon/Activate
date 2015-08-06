@@ -11,10 +11,10 @@ import UIKit
 import Parse
 
 class LoginVC: UIViewController {
-
+    
     @IBOutlet weak var email: UITextField! // username = email
     @IBOutlet weak var password: UITextField!
-
+    
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     
@@ -25,11 +25,11 @@ class LoginVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     @IBAction func back () {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-
+    
     @IBAction func done() {
         var userEmail                 = email.text
         var userPassword          = password.text
@@ -37,13 +37,12 @@ class LoginVC: UIViewController {
         PFUser.logInWithUsernameInBackground(userEmail, password:userPassword) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.performSegueWithIdentifier("loginToTimeline", sender: self)
-//                    println(PFUser.object()
-                }
+                self.performSegueWithIdentifier("loginToTimeline", sender: self)
+                //                    println(PFUser.object()
+                
             } else {
-                    println("**login ERROR**")
-                }
+                println("**login ERROR**")
             }
+        }
     }
 }

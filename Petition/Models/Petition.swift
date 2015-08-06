@@ -12,9 +12,11 @@ struct Petition {
     
     var title: String?
     var body: String?
+    var petitionId:    String?
     
-    init(title: String?, body: String?) {
+    init(title: String?, body: String?, petitionId: String?) {
         self.title = title
         self.body = body
+        self.petitionId = petitionId
     }
 }

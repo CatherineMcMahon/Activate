@@ -22,9 +22,9 @@
 		C19645F51B69909700C84E23 /* RandomColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19645F41B69909700C84E23 /* RandomColorExtension.swift */; };
 		C1D60ECA1B617B85007817D0 /* TimelineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D60EC91B617B85007817D0 /* TimelineVC.swift */; };
 		C1DD82491B695D11000E2EF6 /* TimelineComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DD82481B695D11000E2EF6 /* TimelineComponents.swift */; };
+		C1DFBE3F1B72990D00F5AE7E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFBE3E1B72990D00F5AE7E /* User.swift */; };
 		C1FDFACE1B707D420073C979 /* ContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FDFACA1B707D420073C979 /* ContentViewCell.swift */; };
 		C1FDFACF1B707D420073C979 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FDFACC1B707D420073C979 /* SearchViewCell.swift */; };
-		C1FDFAD21B707D6F0073C979 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FDFAD11B707D6F0073C979 /* ContentView.swift */; };
 		C1FDFAD61B7085F60073C979 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FDFAD51B7085F60073C979 /* Main.storyboard */; };
 		C1FECBBD1B7016AD00599B59 /* NSCacheSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FECBBC1B7016AD00599B59 /* NSCacheSwift.swift */; };
 		C1FECBBF1B702C2500599B59 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FECBBE1B702C2500599B59 /* Search.swift */; };
@@ -64,10 +64,10 @@
 		C19645F41B69909700C84E23 /* RandomColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomColorExtension.swift; sourceTree = "<group>"; };
 		C1D60EC91B617B85007817D0 /* TimelineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineVC.swift; sourceTree = "<group>"; };
 		C1DD82481B695D11000E2EF6 /* TimelineComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineComponents.swift; sourceTree = "<group>"; };
+		C1DFBE3E1B72990D00F5AE7E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C1FC774B1B59B725008BBFBA /* Petition-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Petition-Bridging-Header.h"; sourceTree = "<group>"; };
 		C1FDFACA1B707D420073C979 /* ContentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewCell.swift; sourceTree = "<group>"; };
 		C1FDFACC1B707D420073C979 /* SearchViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
-		C1FDFAD11B707D6F0073C979 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C1FDFAD51B7085F60073C979 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C1FECBBC1B7016AD00599B59 /* NSCacheSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCacheSwift.swift; sourceTree = "<group>"; };
 		C1FECBBE1B702C2500599B59 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -185,6 +185,7 @@
 			children = (
 				C1830F831B631300002A0726 /* Petition.swift */,
 				C1FECBBE1B702C2500599B59 /* Search.swift */,
+				C1DFBE3E1B72990D00F5AE7E /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -201,7 +202,6 @@
 		C1FDFAD01B707D4E0073C979 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C1FDFAD11B707D6F0073C979 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -377,9 +377,9 @@
 			files = (
 				C1D60ECA1B617B85007817D0 /* TimelineVC.swift in Sources */,
 				C11869F31B6AC589003DAB76 /* ContentVC.swift in Sources */,
-				C1FDFAD21B707D6F0073C979 /* ContentView.swift in Sources */,
 				C19645F51B69909700C84E23 /* RandomColorExtension.swift in Sources */,
 				C15FDE931B57547600B77239 /* MainVC.swift in Sources */,
+				C1DFBE3F1B72990D00F5AE7E /* User.swift in Sources */,
 				C154A1F81B5ECD20004DB4EC /* LoginVC.swift in Sources */,
 				C1DD82491B695D11000E2EF6 /* TimelineComponents.swift in Sources */,
 				C1FDFACF1B707D420073C979 /* SearchViewCell.swift in Sources */,
@@ -441,6 +441,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -486,6 +487,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -520,7 +522,7 @@
 					"$(PROJECT_DIR)/Petition",
 				);
 				INFOPLIST_FILE = Petition/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Petition/Petition-Bridging-Header.h";
@@ -542,7 +544,7 @@
 					"$(PROJECT_DIR)/Petition",
 				);
 				INFOPLIST_FILE = Petition/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Petition/Petition-Bridging-Header.h";
