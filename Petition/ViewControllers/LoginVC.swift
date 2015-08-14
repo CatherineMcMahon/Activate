@@ -15,9 +15,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var email: UITextField! // username = email
     @IBOutlet weak var password: UITextField!
     
-    @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var doneButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

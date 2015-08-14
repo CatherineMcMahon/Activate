@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ContentViewCell: UITableViewCell {
+class TimelineViewCell: UITableViewCell {
     
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var postDesc: UILabel!

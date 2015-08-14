@@ -33,7 +33,6 @@ class SignUpVC: UIViewController {
         }
     }
     
-    
         func signUp() {
     var user                            = PFUser()
     user.username                       = email.text

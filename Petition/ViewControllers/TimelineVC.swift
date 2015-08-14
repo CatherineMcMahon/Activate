@@ -7,7 +7,7 @@ import ConvenienceKit
 class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource, TimelineComponentTarget {
     
     var cache                                        = [String: UILabel]()
-    let kCellIdentifier: String                      = "ContentViewCell"
+    let kCellIdentifier: String                      = "TimelineViewCell"
     var timelineComponent: TimelineComponents<Petition, TimelineVC>!
     
     @IBOutlet var tableView: UITableView!
@@ -60,7 +60,7 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell                                         = tableView.dequeueReusableCellWithIdentifier("ContentViewCell") as! ContentViewCell
+        let cell                                         = tableView.dequeueReusableCellWithIdentifier("TimelineViewCell") as! TimelineViewCell
         
         let petition                                     = timelineComponent.content[indexPath.row]
         cell.postTitle.text                              = petition.title

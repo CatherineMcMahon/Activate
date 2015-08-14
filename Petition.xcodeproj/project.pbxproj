@@ -11,7 +11,6 @@
 		C1390C3F1B7D7B5D006543E1 /* colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1390C3E1B7D7B5D006543E1 /* colour.swift */; };
 		C14C6CBB1B6FEE1F002AA905 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C6CBA1B6FEE1F002AA905 /* MoreVC.swift */; };
 		C14C6CBD1B6FEE37002AA905 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C6CBC1B6FEE37002AA905 /* SearchVC.swift */; };
-		C1503F671B752FC2003B921F /* stars.gif in Resources */ = {isa = PBXBuildFile; fileRef = C1503F661B752FC2003B921F /* stars.gif */; };
 		C154A1F61B5ECCE3004DB4EC /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C154A1F51B5ECCE3004DB4EC /* SignUpVC.swift */; };
 		C154A1F81B5ECD20004DB4EC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C154A1F71B5ECD20004DB4EC /* LoginVC.swift */; };
 		C15FDE911B57547600B77239 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15FDE901B57547600B77239 /* AppDelegate.swift */; };
@@ -25,7 +24,7 @@
 		C1D60ECA1B617B85007817D0 /* TimelineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D60EC91B617B85007817D0 /* TimelineVC.swift */; };
 		C1DD82491B695D11000E2EF6 /* TimelineComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DD82481B695D11000E2EF6 /* TimelineComponents.swift */; };
 		C1DFBE3F1B72990D00F5AE7E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DFBE3E1B72990D00F5AE7E /* User.swift */; };
-		C1FDFACE1B707D420073C979 /* ContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FDFACA1B707D420073C979 /* ContentViewCell.swift */; };
+		C1FDFACE1B707D420073C979 /* TimelineViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FDFACA1B707D420073C979 /* TimelineViewCell.swift */; };
 		C1FDFACF1B707D420073C979 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FDFACC1B707D420073C979 /* SearchViewCell.swift */; };
 		C1FDFAD61B7085F60073C979 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FDFAD51B7085F60073C979 /* Main.storyboard */; };
 		C1FECBBD1B7016AD00599B59 /* NSCacheSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FECBBC1B7016AD00599B59 /* NSCacheSwift.swift */; };
@@ -41,7 +40,6 @@
 		C1390C3E1B7D7B5D006543E1 /* colour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colour.swift; sourceTree = "<group>"; };
 		C14C6CBA1B6FEE1F002AA905 /* MoreVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		C14C6CBC1B6FEE37002AA905 /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
-		C1503F661B752FC2003B921F /* stars.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = stars.gif; sourceTree = "<group>"; };
 		C154A1F51B5ECCE3004DB4EC /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		C154A1F71B5ECD20004DB4EC /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C15FDE8B1B57547600B77239 /* Activate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Activate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +58,7 @@
 		C1DD82481B695D11000E2EF6 /* TimelineComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineComponents.swift; sourceTree = "<group>"; };
 		C1DFBE3E1B72990D00F5AE7E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C1FC774B1B59B725008BBFBA /* Petition-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Petition-Bridging-Header.h"; sourceTree = "<group>"; };
-		C1FDFACA1B707D420073C979 /* ContentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewCell.swift; sourceTree = "<group>"; };
+		C1FDFACA1B707D420073C979 /* TimelineViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewCell.swift; sourceTree = "<group>"; };
 		C1FDFACC1B707D420073C979 /* SearchViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		C1FDFAD51B7085F60073C979 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Petition/Main.storyboard; sourceTree = "<group>"; };
 		C1FECBBC1B7016AD00599B59 /* NSCacheSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCacheSwift.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 		C15FDE8E1B57547600B77239 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C1503F661B752FC2003B921F /* stars.gif */,
 				C1DD82481B695D11000E2EF6 /* TimelineComponents.swift */,
 				C15FDE8F1B57547600B77239 /* Info.plist */,
 				C1FC774B1B59B725008BBFBA /* Petition-Bridging-Header.h */,
@@ -177,7 +174,7 @@
 		C1FDFAC91B707D420073C979 /* ViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				C1FDFACA1B707D420073C979 /* ContentViewCell.swift */,
+				C1FDFACA1B707D420073C979 /* TimelineViewCell.swift */,
 				C1FDFACC1B707D420073C979 /* SearchViewCell.swift */,
 			);
 			name = ViewCells;
@@ -265,7 +262,6 @@
 				C16980B71B5822F100232415 /* About in Resources */,
 				C15FDE9B1B57547600B77239 /* LaunchScreen.xib in Resources */,
 				C15FDE981B57547600B77239 /* Images.xcassets in Resources */,
-				C1503F671B752FC2003B921F /* stars.gif in Resources */,
 				C1FDFAD61B7085F60073C979 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,7 +337,7 @@
 				C18622EB1B792636004FFD7B /* BounceButtonView.swift in Sources */,
 				C1FECBBF1B702C2500599B59 /* Search.swift in Sources */,
 				C1390C3F1B7D7B5D006543E1 /* colour.swift in Sources */,
-				C1FDFACE1B707D420073C979 /* ContentViewCell.swift in Sources */,
+				C1FDFACE1B707D420073C979 /* TimelineViewCell.swift in Sources */,
 				C154A1F61B5ECCE3004DB4EC /* SignUpVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
