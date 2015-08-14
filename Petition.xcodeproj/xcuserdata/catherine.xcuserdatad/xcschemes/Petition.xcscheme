@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C15FDE8A1B57547600B77239"
-               BuildableName = "Petition.app"
-               BlueprintName = "Petition"
+               BuildableName = "Activate.app"
+               BlueprintName = "Activate"
                ReferencedContainer = "container:Petition.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C15FDE8A1B57547600B77239"
-            BuildableName = "Petition.app"
-            BlueprintName = "Petition"
+            BuildableName = "Activate.app"
+            BlueprintName = "Activate"
             ReferencedContainer = "container:Petition.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,8 +77,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C15FDE8A1B57547600B77239"
-            BuildableName = "Petition.app"
-            BlueprintName = "Petition"
+            BuildableName = "Activate.app"
+            BlueprintName = "Activate"
             ReferencedContainer = "container:Petition.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -96,8 +96,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C15FDE8A1B57547600B77239"
-            BuildableName = "Petition.app"
-            BlueprintName = "Petition"
+            BuildableName = "Activate.app"
+            BlueprintName = "Activate"
             ReferencedContainer = "container:Petition.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

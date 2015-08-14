@@ -16,7 +16,6 @@ class BounceButtonView: ASOBounceButtonView {
     @IBOutlet weak var share: UIButton!
     @IBOutlet weak var sign: UIButton!
 
-    
     var petition: Petition?
     var petitionId: String?
     var email: String?
@@ -85,66 +84,3 @@ class BounceButtonView: ASOBounceButtonView {
         return true
     }
 }
-
-
-
-//class ExpandStyleMenuViewController: UIViewController, ASOBounceButtonViewDelegate {
-//
-//    
-//    var menuItemView: BounceButtonView?
-//    
-//    override func viewDidAppear(animated: Bool) {
-//        self.menuItemView!.setAnimationStartFromHere(self.menuButton.frame)
-//    }
-//    
-//    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-//        self.menuItemView!.setAnimationStartFromHere(self.menuButton.frame)
-//    }
-//
-//    
-//    func didSelectBounceButtonAtIndex(index: UInt) {
-//        self.menuButton.sendActionsForControlEvents(.TouchUpInside)
-//        println("Menu Item \(index) is selected")
-//    }
-//    
-//    
-//    @IBAction func menuButtonAction(sender: AnyObject) {
-
-//        if (sender.isOn != nil) {
-//            self.menuButton.addCustomView(self.menuItemView)
-//            self.menuItemView!.expandWithAnimationStyle(ASOAnimationStyleExpand)
-//        }
-//        else {
-//            self.menuItemView!.collapseWithAnimationStyle(ASOAnimationStyleExpand)
-//            self.menuButton.removeCustomView(self.menuItemView, interval: self.menuItemView!.collapsedViewDuration.doubleValue)
-//        }
-//
-//        //Set to false to disable Fade effect between its two-state transition
-//        self.menuButton.initAnimationWithFadeEffectEnabled(true)
-//        
-//        var mainStoryboard: UIStoryboard = UIStoryboard(name: "ContentVC", bundle: nil)
-//        
-//        var menuItemsVC: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ExpandMenu") as! UIViewController
-//        
-//
-//         menuItemsVC.view =  self.menuItemView
-//        
-//        
-//    
-//        
-//        
-//        var arrMenuItemButtons = [AnyObject]()
-//        
-//        arrMenuItemButtons.append(self.menuItemView!.share)
-//        arrMenuItemButtons.append(self.menuItemView!.sign)
-//
-//        
-////        var arrMenuItemButtons: [AnyObject] = NSArray(self.share, self.share) as [AnyObject]
-//        self.menuItemView!.addBounceButtons(arrMenuItemButtons)
-//}
-//}
-
-
-
-
-

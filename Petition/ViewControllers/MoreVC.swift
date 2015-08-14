@@ -25,15 +25,5 @@ class MoreVC: UIViewController {
                 self.performSegueWithIdentifier("logOut", sender: nil)
             }
         }
-//        
-//        @IBAction func showAlert() {
-//            let alertController = UIAlertController(title: "", message: "What do you want to do?", preferredStyle: .Alert)
-//            
-//            let default ller.addAction(defaultAction)
-//            
-//            presentViewController(alertController, animated: true, completion: nil)
-//        }
     }
-    
-    
 }

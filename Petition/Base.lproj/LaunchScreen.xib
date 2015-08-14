@@ -7,12 +7,48 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.66137937430000004" green="0.75089751559999995" blue="0.77679135099999996" alpha="1" colorSpace="calibratedRGB"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG_launch" translatesAutoresizingMaskIntoConstraints="NO" id="U1t-Ft-vTz">
+                    <rect key="frame" x="0.0" y="-10" width="624" height="617"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="uGR-9u-Aei">
+                    <rect key="frame" x="249" y="201" width="102" height="121"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="121" id="O3c-yZ-7SQ"/>
+                        <constraint firstAttribute="width" constant="102" id="nTP-IA-4bE"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACTIVATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRx-ot-BQt">
+                    <rect key="frame" x="267" y="330" width="90" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Tzm-Ob-x56"/>
+                        <constraint firstAttribute="width" constant="90" id="ehe-bZ-0Hz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="18"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="uGR-9u-Aei" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BKL-GQ-W48"/>
+                <constraint firstItem="U1t-Ft-vTz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-10" id="DeW-4E-uar"/>
+                <constraint firstItem="U1t-Ft-vTz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="K5v-mh-Bph"/>
+                <constraint firstItem="gRx-ot-BQt" firstAttribute="centerX" secondItem="U1t-Ft-vTz" secondAttribute="centerX" id="KFV-Wx-wx6"/>
+                <constraint firstAttribute="trailing" secondItem="U1t-Ft-vTz" secondAttribute="trailing" constant="-24" id="LO3-af-1OQ"/>
+                <constraint firstItem="gRx-ot-BQt" firstAttribute="top" secondItem="uGR-9u-Aei" secondAttribute="bottom" constant="8" symbolic="YES" id="Mtv-r4-hyh"/>
+                <constraint firstItem="uGR-9u-Aei" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-38.5" id="gns-dM-U9q"/>
+                <constraint firstItem="U1t-Ft-vTz" firstAttribute="centerY" secondItem="uGR-9u-Aei" secondAttribute="centerY" constant="37" id="hm1-tK-95A"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="BG_launch" width="1536" height="2008"/>
+        <image name="Logo" width="934" height="1142"/>
+    </resources>
 </document>
