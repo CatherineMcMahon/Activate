@@ -20,11 +20,26 @@ class SignUpVC: UIViewController {
 
     var objectId: String?
 //    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
+    override func viewDidAppear(animated: Bool) {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: "handleSingleTap:")
+        tapRecognizer.numberOfTapsRequired = 1
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    func handleSingleTap(recognizer: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.hidden = false
+    }
+
     @IBAction func done(sender: AnyObject) {
         if(firstName.text != nil && lastName.text != nil && zipcode.text != nil && email.text != nil && password != nil) {
                 signUp()

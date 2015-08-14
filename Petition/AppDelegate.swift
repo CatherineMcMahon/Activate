@@ -18,7 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //        UIApplication.sharedApplication().statusBarStyle = .LightContent
         
+//        let loggedIn: Bool = NSUserDefaults.standardUserDefaults().boolForKey("loggedIn")
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+//        let mainVC: AnyObject! = storyboard.instantiateViewControllerWithIdentifier("MainVC")
+//        let signUp: AnyObject! = storyboard.instantiateViewControllerWithIdentifier("SignUpVC")
+        
+//        let window = self.window
+        
+   /*  if PFUser.currentUser() == nil {
+            window!.rootViewController = MainVC() //user that hasn't made account
+        } else {
+            window!.rootViewController = TimelineVC() //user logged in + closed app, etc.
+        } */
+        
+        
         Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+        
         let mixpanel: Mixpanel = Mixpanel.sharedInstance()
         mixpanel.track("App launched")
         
@@ -28,9 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true;
     }
-
-//    func appl
-
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

@@ -18,11 +18,16 @@ class ContentVC: UITableViewController {
     var firstName: String?
     var lastName: String?
     var zipcode: String?
+    var color: UIColor?
+
     @IBOutlet weak var sign: UIButton!
     
-//    var color: UIColor?
     
-//    colour!.color = color
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.hidden = false
+    }
+    
     
 //    @IBOutlet var menuItemView: BounceButtonView!
     
@@ -61,6 +66,7 @@ class ContentVC: UITableViewController {
             detailTitle.text          = petition!.title
             detailBody.text           = petition!.body
             petitionId                = petition!.petitionId
+            color = petition!.color
         }
     }
     
@@ -137,7 +143,7 @@ class ContentVC: UITableViewController {
 //        tableView.backgroundColor = RandomColor
         
 //        self.menuButton.initAnimationWithFadeEffectEnabled(true)
-//        petitionDetail()
+        petitionDetail()
         
 //        var arrMenuItemButtons = [UIButton]()
         

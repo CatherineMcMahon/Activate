@@ -17,6 +17,12 @@ class MoreVC: UIViewController {
     
     @IBAction func logout(sender: AnyObject) {
         
+        
+         func viewWillAppear(animated: Bool) {
+            super.viewWillAppear(animated)
+            navigationController?.navigationBar.hidden = false
+        }
+        
         PFUser.logOutInBackgroundWithBlock { (error) -> Void in
             if let error    = error {
 //                showAlert()

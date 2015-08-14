@@ -30,6 +30,12 @@ class SearchVC: UIViewController {
         search()
     }
     
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.hidden = false
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "searchToContentVC") {
             var something                    = segue.destinationViewController as! ContentVC
@@ -72,7 +78,7 @@ class SearchVC: UIViewController {
                             var newData                    = [Petition]()
                             println(jsonResult)
                             if let results: NSArray      = jsonResult["results"] as? NSArray {
-                                
+                                var color = UIColor.redColor()
                                 for result in results {
                                     
                                     if let title                 = result["title"] as? String, body = result["body"] as?  String {
@@ -83,7 +89,7 @@ class SearchVC: UIViewController {
                                         } else {
                                             id = String((result["id"] as! Int))
                                         }
-                                        let search                   = Petition(title: title, body: body, petitionId: id)
+                                        let search                   = Petition(title: title, body: body, petitionId: id, color: color)
                                         newData.append(search)
                                     }
                                 }
