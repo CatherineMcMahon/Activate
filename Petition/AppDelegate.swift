@@ -32,6 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window!.rootViewController = TimelineVC() //user logged in + closed app, etc.
         } */
         
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
         
         Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
         

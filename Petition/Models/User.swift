@@ -10,7 +10,6 @@ import Foundation
 
 struct User {
     
-    var username: String?
     var password: String?
     var email:    String?
     var firstName: String?
@@ -18,9 +17,8 @@ struct User {
     var zipcode: String?
     var objectId: String?
     
-    init(username: String?, password: String?, email: String?, firstName: String?, lastName: String?, zipcode: String?, objectId: String?) {
+    init(password: String?, email: String?, firstName: String?, lastName: String?, zipcode: String?, objectId: String?) {
 
-        self.username = username
         self.password = password
         self.email = email
         self.firstName = firstName

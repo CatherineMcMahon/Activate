@@ -13,7 +13,6 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @IBOutlet var tableView: UITableView!
     let defaultRange                 = 0...4
     let additionalRangeSize          = 5
-    
     var tableData                    = []
     
     
@@ -45,7 +44,6 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             }
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

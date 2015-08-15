@@ -95,7 +95,7 @@ class ContentVC: UITableViewController {
         var session               = NSURLSession.sharedSession()
         request.HTTPMethod        = "POST"
         
-        var params                = ["petition_id": petitionId!, "email": email!, "firstName": firstName!, "last_name": lastName!, "zip": zipcode! ] as Dictionary<String, String>
+        var params                = ["petition_id": petitionId!, "email": email!, "first_name": firstName!, "last_name": lastName!, "zip": zipcode! ] as Dictionary<String, String>
         
         var err: NSError?
         request.HTTPBody          = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
@@ -114,16 +114,27 @@ class ContentVC: UITableViewController {
                     println(err!.localizedDescription)
                     let jsonStr               = NSString(data: data, encoding: NSUTF8StringEncoding)
                     println("Error could not parse JSON: '\(jsonStr)'")
+                    let alert = UIAlertController(title: "Error", message: "Something went wrong.", preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                    
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
                 else {
                     
                     if let parseJSON          = json {
                         var status                = parseJSON["developerMessage"] as? Int
                         println("Success: \(status)")
+                        
+                        let alert = UIAlertController(title: "Successfully Signed", message: "Thank you for signing this petition. You will recieve an email shortly.", preferredStyle: .Alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                        
+                        self.presentViewController(alert, animated: true, completion: nil)
                     }
                     else {
-                        let jsonStr               = NSString(data: data, encoding: NSUTF8StringEncoding)
-                        println("Error could not parse JSON: \(jsonStr)")
+                        let alert = UIAlertController(title: "Error", message: "Something went wrong.", preferredStyle: .Alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                        
+                        self.presentViewController(alert, animated: true, completion: nil)
                     }
                 }
         })
@@ -134,7 +145,7 @@ class ContentVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.estimatedRowHeight = 20
+        tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
         
         
