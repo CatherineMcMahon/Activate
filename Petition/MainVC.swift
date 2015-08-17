@@ -10,7 +10,7 @@
 
 import UIKit
 import Parse
-import MediaPlayer
+import Mixpanel
 
 class MainVC: UIViewController {
 

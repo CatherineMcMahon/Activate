@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import ConvenienceKit
+import Mixpanel
 
 class SearchVC: UIViewController {
     
@@ -38,6 +39,12 @@ class SearchVC: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "searchToContentVC") {
+            
+            // MARK: Mixpanel 'Search to ContentVC'
+            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+            mixpanel.track("Search to ContentVC")
+            
             var something                    = segue.destinationViewController as! ContentVC
             
             if let cell                      = sender as? UITableViewCell {
@@ -113,6 +120,11 @@ extension SearchVC: UISearchBarDelegate {
         self.searchText              = searchText
         
         search()
+        
+        // MARK: Mixpanel 'User searches'
+        Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("User searches")
     }
 }
 

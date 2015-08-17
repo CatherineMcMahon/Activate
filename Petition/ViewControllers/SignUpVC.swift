@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Parse
 import ParseUI
+import Mixpanel
 
 class SignUpVC: UIViewController {
     
@@ -19,8 +20,6 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var zipcode: UITextField!
     
     var objectId: String?
-    //    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
     
     override func viewDidAppear(animated: Bool) {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: "handleSingleTap:")
@@ -72,6 +71,11 @@ class SignUpVC: UIViewController {
     @IBAction func done(sender: AnyObject) {
         if(firstName.text != nil && lastName.text != nil && zipcode.text != nil && email.text != nil && password != nil) {
             signUp()
+            
+            // MARK: mixpanel 'Successful sign up'
+            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+            mixpanel.track("Successful sign up")
         } else {
             println("can't sign up. try again")
         }
@@ -104,8 +108,12 @@ class SignUpVC: UIViewController {
         } else {
             let alert = UIAlertController(title: "Error", message: "Please fill in all the fields", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-            
             self.presentViewController(alert, animated: true, completion: nil)
+            
+            // MARK: mixpanel 'Unsuccessful Sign up'
+            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+            mixpanel.track("Unsuccessful sign up")
         }
     }
     

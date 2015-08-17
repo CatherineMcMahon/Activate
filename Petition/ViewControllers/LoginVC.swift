@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Mixpanel
 import Parse
 
 class LoginVC: UIViewController {
@@ -46,27 +47,33 @@ class LoginVC: UIViewController {
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "loggedIn")
         NSUserDefaults.standardUserDefaults().synchronize()
         
-//        let storyboard                             = UIStoryboard(name: "Main", bundle: nil)
-//        let vc                                     = storyboard.instantiateViewControllerWithIdentifier("TimelineVC") as! UIViewController
-//        self.presentViewController(vc, animated: true, completion: nil)
-        
         if email.hasText() && password.hasText() {
             
             PFUser.logInWithUsernameInBackground(userEmail, password:userPassword) {
                 (user: PFUser?, error: NSError?) -> Void in
                 if user != nil {
+                    
+                    // MARK: Mixpanel 'Successful login'
+                    Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+                    let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+                    mixpanel.track("Successful login")
+                    
                     self.performSegueWithIdentifier("loginToTimeline", sender: self)
-                    //                    println(PFUser.object()
                     
                 } else {
-                    println("**login ERROR**") //Alert Controller to user
-                }
+                    println("**login ERROR**")                }
             }
         } else {
             let alert = UIAlertController(title: "Error", message: "Please fill in all the fields", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-            
             self.presentViewController(alert, animated: true, completion: nil)
+            
+            // MARK: Mixpanel 'Unsuccessful login'
+            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+            mixpanel.track("Unsuccessful login")
+
+            
         }
     }
 }

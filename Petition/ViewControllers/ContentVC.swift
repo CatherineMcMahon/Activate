@@ -8,6 +8,7 @@
 import Foundation
 import ParseUI
 import Parse
+import Mixpanel
 //import ASOAnimatedButton
 
 class ContentVC: UITableViewController {
@@ -67,6 +68,7 @@ class ContentVC: UITableViewController {
             detailBody.text           = petition!.body
             petitionId                = petition!.petitionId
             color = petition!.color
+            self.tableView.backgroundColor = color
         }
     }
     
@@ -76,8 +78,24 @@ class ContentVC: UITableViewController {
     @IBAction func sign(sender: UIButton) {
         if let currentUser        = PFUser.currentUser() {
             signPetition()
+            
+            // MARK: Mixpanel 'Signed Petition'
+            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+            mixpanel.track("Sign Success")
+
+        
         } else {
             //prompt user to sign up or login
+            let alert = UIAlertController(title: "Error", message: "You need to sign up or login before you can sign a petition!", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+
+            // MARK: Mixpanel 'Sign Error'
+            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+            mixpanel.track("Sign Error")
+            
             println("user is not signed in; cannot sign petition")
         }
     }
@@ -114,7 +132,7 @@ class ContentVC: UITableViewController {
                     println(err!.localizedDescription)
                     let jsonStr               = NSString(data: data, encoding: NSUTF8StringEncoding)
                     println("Error could not parse JSON: '\(jsonStr)'")
-                    let alert = UIAlertController(title: "Error", message: "Something went wrong.", preferredStyle: .Alert)
+                    let alert = UIAlertController(title: "Error", message: "Oops! Something went wrong.", preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                     
                     self.presentViewController(alert, animated: true, completion: nil)
@@ -125,13 +143,13 @@ class ContentVC: UITableViewController {
                         var status                = parseJSON["developerMessage"] as? Int
                         println("Success: \(status)")
                         
-                        let alert = UIAlertController(title: "Successfully Signed", message: "Thank you for signing this petition. You will recieve an email shortly.", preferredStyle: .Alert)
+                        let alert = UIAlertController(title: "Successfully Signed", message: "Thanks for signing this petition! You will recieve an email shortly to confirm your signature.", preferredStyle: .Alert)
                         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                         
                         self.presentViewController(alert, animated: true, completion: nil)
                     }
                     else {
-                        let alert = UIAlertController(title: "Error", message: "Something went wrong.", preferredStyle: .Alert)
+                        let alert = UIAlertController(title: "Error", message: "Oops! Something went wrong.", preferredStyle: .Alert)
                         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                         
                         self.presentViewController(alert, animated: true, completion: nil)
@@ -148,6 +166,7 @@ class ContentVC: UITableViewController {
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
         
+//        self.tableView.backgroundColor = color
         
 //        self.menuItemView.hidden = true
         
