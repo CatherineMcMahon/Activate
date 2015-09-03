@@ -5,6 +5,21 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="DaO-TD-Axn">
+            <objects>
+                <tabBarController id="KDA-Et-ouQ" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="dwo-r1-aKK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4jf-QB-UZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1743" y="-514"/>
+        </scene>
         <!--Sign Up-->
         <scene sceneID="OTG-Gy-Q1b">
             <objects>
@@ -123,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcQ-Wc-wZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1247" y="-681"/>
+            <point key="canvasLocation" x="1089" y="-514"/>
         </scene>
         <!--Search-->
         <scene sceneID="ALz-h1-zyd">
@@ -148,6 +163,15 @@
                                 <color key="separatorColor" red="0.0" green="0.41570879430000002" blue="0.44105908929999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.41570879430000002" blue="0.44105908929999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.41570879430000002" blue="0.44105908929999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <tabBar key="tableFooterView" contentMode="scaleToFill" id="aXB-Gn-Uwk">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <items>
+                                        <tabBarItem systemItem="favorites" id="p1e-KK-8OV"/>
+                                        <tabBarItem systemItem="more" id="ewp-9K-YPY"/>
+                                    </items>
+                                </tabBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SearchViewCell" rowHeight="109" id="E8S-ag-Xmm" customClass="SearchViewCell" customModule="Activate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="116" width="600" height="86"/>
@@ -238,6 +262,15 @@
                                 <color key="sectionIndexColor" red="0.0" green="0.41570879430000002" blue="0.44105908929999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.41570879430000002" blue="0.44105908929999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.043137254899999998" green="0.34509803919999998" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <tabBar key="tableFooterView" contentMode="scaleToFill" id="erm-nU-CVD">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <items>
+                                        <tabBarItem systemItem="favorites" id="73d-Mr-A7w"/>
+                                        <tabBarItem systemItem="more" id="qOU-ak-6dN"/>
+                                    </items>
+                                </tabBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineViewCell" rowHeight="175" id="fP3-bM-gfp" customClass="TimelineViewCell" customModule="Activate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -796,8 +829,8 @@
         <image name="Settings" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KNZ-eQ-kSr"/>
         <segue reference="Lgq-9I-jJQ"/>
+        <segue reference="deq-wf-ayl"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
