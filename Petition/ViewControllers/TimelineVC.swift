@@ -22,7 +22,6 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     let additionalRangeSize                    = 5
     var tableData                              = []
     
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.hidden = false
@@ -49,9 +48,9 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                     something.petition                         = petition
                     
                     // MARK: Mixpanel 'Content Tapped'
-                    Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
-                    let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-                    mixpanel.track("Content Tapped")
+//                    Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+//                    let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+//                    mixpanel.track("Content Tapped")
 
                 }
             }

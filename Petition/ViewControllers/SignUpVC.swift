@@ -73,9 +73,9 @@ class SignUpVC: UIViewController {
             signUp()
             
             // MARK: mixpanel 'Successful sign up'
-            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
-            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-            mixpanel.track("Successful sign up")
+//            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+//            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+//            mixpanel.track("Successful sign up")
         } else {
             println("can't sign up. try again")
         }
@@ -90,9 +90,9 @@ class SignUpVC: UIViewController {
         user.username                       = email.text
         user.password                       = password.text
         user.email                          = email.text
-        user["firstName"]                   = firstName.text
-        user["lastName"]                    = lastName.text
-        user["zipcode"]                     = zipcode.text
+            user.setValue(zipcode.text, forKey:"firstName")
+            user.setValue(zipcode.text, forKey:"zipcode")
+            user.setValue(zipcode.text, forKey:"lastName")
         user.objectId = objectId
         
         user.signUpInBackgroundWithBlock {
@@ -111,9 +111,9 @@ class SignUpVC: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
             
             // MARK: mixpanel 'Unsuccessful Sign up'
-            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
-            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-            mixpanel.track("Unsuccessful sign up")
+//            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+//            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+//            mixpanel.track("Unsuccessful sign up")
         }
     }
     

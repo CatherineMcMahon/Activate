@@ -29,27 +29,6 @@ class ContentVC: UITableViewController {
         navigationController?.navigationBar.hidden = false
     }
     
-    
-//    @IBOutlet var menuItemView: BounceButtonView!
-    
-    //    @IBOutlet var menuButton2: ASOTwoStateButton!
-    
-//    @IBOutlet weak var menuButton: ASOTwoStateButton!
-    
-//    @IBAction func moreButtonPressed (sender: ASOTwoStateButton) {
-        //self.view.addSubview(BounceButtonView())
-        //self.theView.hidden = false
-        
-//        if (!sender.isOn) {
-//            self.menuButton.addCustomView(self.menuItemView)
-//            self.menuItemView!.expandWithAnimationStyle(ASOAnimationStyleRiseConcurrently)
-//        }
-//        else {
-//            self.menuItemView!.collapseWithAnimationStyle(ASOAnimationStyleRiseConcurrently)
-//            self.menuButton.removeCustomView(self.menuItemView, interval: self.menuItemView!.collapsedViewDuration.doubleValue)
-//       }
-//    }
-    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -80,9 +59,9 @@ class ContentVC: UITableViewController {
             signPetition()
             
             // MARK: Mixpanel 'Signed Petition'
-            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
-            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-            mixpanel.track("Sign Success")
+//            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+//            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+//            mixpanel.track("Sign Success")
 
         
         } else {
@@ -91,10 +70,10 @@ class ContentVC: UITableViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
 
-            // MARK: Mixpanel 'Sign Error'
-            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
-            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-            mixpanel.track("Sign Error")
+//            // MARK: Mixpanel 'Sign Error'
+//            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+//            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+//            mixpanel.track("Sign Error")
             
             println("user is not signed in; cannot sign petition")
         }
@@ -165,24 +144,7 @@ class ContentVC: UITableViewController {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-//        self.tableView.backgroundColor = color
-        
-//        self.menuItemView.hidden = true
-        
-//        tableView.backgroundColor = RandomColor
-        
-//        self.menuButton.initAnimationWithFadeEffectEnabled(true)
         petitionDetail()
-        
-//        var arrMenuItemButtons = [UIButton]()
-        
-//         arrMenuItemButtons.append(self.menuItemView!.share)
-       
-//        arrMenuItemButtons.append(self.menuItemView!.sign)
-        
-//        self.menuItemView!.addBounceButtons(arrMenuItemButtons)
-
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

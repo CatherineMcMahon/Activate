@@ -41,9 +41,9 @@ class SearchVC: UIViewController {
         if (segue.identifier == "searchToContentVC") {
             
             // MARK: Mixpanel 'Search to ContentVC'
-            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
-            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-            mixpanel.track("Search to ContentVC")
+//            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+//            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+//            mixpanel.track("Search to ContentVC")
             
             var something                    = segue.destinationViewController as! ContentVC
             
@@ -122,9 +122,9 @@ extension SearchVC: UISearchBarDelegate {
         search()
         
         // MARK: Mixpanel 'User searches'
-        Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
-        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-        mixpanel.track("User searches")
+//        Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+//        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+//        mixpanel.track("User searches")
     }
 }
 
@@ -141,10 +141,6 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.title.text              = item.title
         cell.desc.text               = item.body
-        //    cell.created.text            = item.created
-        //            cell.signatures.text         = item.signatures
-        //    cell.signaturesNeeded.text   = item.signaturesNeeded
-        //    cell.signatureThreshold.text = item.signatureThreshold
         
         return cell
     }

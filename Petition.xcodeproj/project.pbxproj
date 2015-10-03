@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		28EC3EB5A309B3669B19C272 /* Pods_Activate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C67F6C87DD290DA19AB7A961 /* Pods_Activate.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C10264141BBB5F160035BEC1 /* PetitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10264131BBB5F160035BEC1 /* PetitionTests.swift */; };
+		C10264161BBB5F330035BEC1 /* PetitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10264151BBB5F330035BEC1 /* PetitionUITests.swift */; };
 		C10354C91B7E81A3001FB462 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C10354C81B7E81A3001FB462 /* Main.storyboard */; };
 		C11869F31B6AC589003DAB76 /* ContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11869F21B6AC589003DAB76 /* ContentVC.swift */; };
 		C1390C3F1B7D7B5D006543E1 /* colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1390C3E1B7D7B5D006543E1 /* colour.swift */; };
-		C14C6CBB1B6FEE1F002AA905 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C6CBA1B6FEE1F002AA905 /* MoreVC.swift */; };
+		C14C6CBB1B6FEE1F002AA905 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C6CBA1B6FEE1F002AA905 /* SettingsVC.swift */; };
 		C14C6CBD1B6FEE37002AA905 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C6CBC1B6FEE37002AA905 /* SearchVC.swift */; };
 		C154A1F61B5ECCE3004DB4EC /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C154A1F51B5ECCE3004DB4EC /* SignUpVC.swift */; };
 		C154A1F81B5ECD20004DB4EC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C154A1F71B5ECD20004DB4EC /* LoginVC.swift */; };
@@ -20,7 +22,6 @@
 		C15FDE981B57547600B77239 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C15FDE971B57547600B77239 /* Images.xcassets */; };
 		C15FDE9B1B57547600B77239 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15FDE991B57547600B77239 /* LaunchScreen.xib */; };
 		C1830F841B631300002A0726 /* Petition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1830F831B631300002A0726 /* Petition.swift */; };
-		C18622EB1B792636004FFD7B /* BounceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18622EA1B792636004FFD7B /* BounceButtonView.swift */; };
 		C19645F51B69909700C84E23 /* RandomColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19645F41B69909700C84E23 /* RandomColorExtension.swift */; };
 		C1D60ECA1B617B85007817D0 /* TimelineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D60EC91B617B85007817D0 /* TimelineVC.swift */; };
 		C1DD82491B695D11000E2EF6 /* TimelineComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DD82481B695D11000E2EF6 /* TimelineComponents.swift */; };
@@ -34,10 +35,12 @@
 /* Begin PBXFileReference section */
 		63E37223185FE02B66C22B13 /* Pods-Activate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Activate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Activate/Pods-Activate.release.xcconfig"; sourceTree = "<group>"; };
 		96B3981F9037017553D75A7C /* Pods-Activate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Activate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Activate/Pods-Activate.debug.xcconfig"; sourceTree = "<group>"; };
+		C10264131BBB5F160035BEC1 /* PetitionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetitionTests.swift; sourceTree = "<group>"; };
+		C10264151BBB5F330035BEC1 /* PetitionUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetitionUITests.swift; sourceTree = "<group>"; };
 		C10354C81B7E81A3001FB462 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Petition/Main.storyboard; sourceTree = "<group>"; };
 		C11869F21B6AC589003DAB76 /* ContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentVC.swift; sourceTree = "<group>"; };
 		C1390C3E1B7D7B5D006543E1 /* colour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colour.swift; sourceTree = "<group>"; };
-		C14C6CBA1B6FEE1F002AA905 /* MoreVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
+		C14C6CBA1B6FEE1F002AA905 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		C14C6CBC1B6FEE37002AA905 /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		C154A1F51B5ECCE3004DB4EC /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		C154A1F71B5ECD20004DB4EC /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -48,15 +51,14 @@
 		C15FDE971B57547600B77239 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Petition/Images.xcassets; sourceTree = "<group>"; };
 		C15FDE9A1B57547600B77239 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C1830F831B631300002A0726 /* Petition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Petition.swift; sourceTree = "<group>"; };
-		C18622EA1B792636004FFD7B /* BounceButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceButtonView.swift; sourceTree = "<group>"; };
-		C19645F41B69909700C84E23 /* RandomColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomColorExtension.swift; sourceTree = "<group>"; };
+		C19645F41B69909700C84E23 /* RandomColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomColorExtension.swift; path = Helpers/RandomColorExtension.swift; sourceTree = "<group>"; };
 		C1D60EC91B617B85007817D0 /* TimelineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineVC.swift; sourceTree = "<group>"; };
 		C1DD82481B695D11000E2EF6 /* TimelineComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineComponents.swift; sourceTree = "<group>"; };
 		C1DFBE3E1B72990D00F5AE7E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C1FC774B1B59B725008BBFBA /* Petition-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Petition-Bridging-Header.h"; sourceTree = "<group>"; };
-		C1FDFACA1B707D420073C979 /* TimelineViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewCell.swift; sourceTree = "<group>"; };
-		C1FDFACC1B707D420073C979 /* SearchViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
-		C1FECBBC1B7016AD00599B59 /* NSCacheSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCacheSwift.swift; sourceTree = "<group>"; };
+		C1FDFACA1B707D420073C979 /* TimelineViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineViewCell.swift; path = ../ViewCells/TimelineViewCell.swift; sourceTree = "<group>"; };
+		C1FDFACC1B707D420073C979 /* SearchViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewCell.swift; path = ../ViewCells/SearchViewCell.swift; sourceTree = "<group>"; };
+		C1FECBBC1B7016AD00599B59 /* NSCacheSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSCacheSwift.swift; path = Helpers/NSCacheSwift.swift; sourceTree = "<group>"; };
 		C1FECBBE1B702C2500599B59 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		C67F6C87DD290DA19AB7A961 /* Pods_Activate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Activate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,6 +78,8 @@
 		C15FDE821B57547600B77239 = {
 			isa = PBXGroup;
 			children = (
+				C1FF26EC1BBB41D4000B078F /* PetitionTests */,
+				C1FF26E91BBB4148000B078F /* PetitionUITests */,
 				C15FDE901B57547600B77239 /* AppDelegate.swift */,
 				C10354C81B7E81A3001FB462 /* Main.storyboard */,
 				C15FDE991B57547600B77239 /* LaunchScreen.xib */,
@@ -83,8 +87,6 @@
 				C15FDE8E1B57547600B77239 /* Supporting Files */,
 				C16980B91B58257300232415 /* ViewControllers */,
 				C1D60ECB1B617C77007817D0 /* Models */,
-				C19645F31B69907100C84E23 /* Helpers */,
-				C1FDFAC91B707D420073C979 /* ViewCells */,
 				C15FDE8C1B57547600B77239 /* Products */,
 				D1DFE56F71B69B29BFA4E985 /* Pods */,
 				DB94F659FF9E2074CCE542C0 /* Frameworks */,
@@ -105,6 +107,8 @@
 				C1DD82481B695D11000E2EF6 /* TimelineComponents.swift */,
 				C15FDE8F1B57547600B77239 /* Info.plist */,
 				C1FC774B1B59B725008BBFBA /* Petition-Bridging-Header.h */,
+				C19645F41B69909700C84E23 /* RandomColorExtension.swift */,
+				C1FECBBC1B7016AD00599B59 /* NSCacheSwift.swift */,
 			);
 			name = "Supporting Files";
 			path = Petition;
@@ -118,27 +122,18 @@
 				C154A1F71B5ECD20004DB4EC /* LoginVC.swift */,
 				C1D60EC91B617B85007817D0 /* TimelineVC.swift */,
 				C11869F21B6AC589003DAB76 /* ContentVC.swift */,
-				C14C6CBA1B6FEE1F002AA905 /* MoreVC.swift */,
+				C14C6CBA1B6FEE1F002AA905 /* SettingsVC.swift */,
 				C14C6CBC1B6FEE37002AA905 /* SearchVC.swift */,
-				C18622EA1B792636004FFD7B /* BounceButtonView.swift */,
 			);
 			name = ViewControllers;
 			path = Petition/ViewControllers;
 			sourceTree = "<group>";
 		};
-		C19645F31B69907100C84E23 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				C19645F41B69909700C84E23 /* RandomColorExtension.swift */,
-				C1FECBBC1B7016AD00599B59 /* NSCacheSwift.swift */,
-			);
-			name = Helpers;
-			path = Petition/Helpers;
-			sourceTree = "<group>";
-		};
 		C1D60ECB1B617C77007817D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C1FDFACA1B707D420073C979 /* TimelineViewCell.swift */,
+				C1FDFACC1B707D420073C979 /* SearchViewCell.swift */,
 				C1830F831B631300002A0726 /* Petition.swift */,
 				C1FECBBE1B702C2500599B59 /* Search.swift */,
 				C1DFBE3E1B72990D00F5AE7E /* User.swift */,
@@ -148,14 +143,20 @@
 			path = Petition/Models;
 			sourceTree = "<group>";
 		};
-		C1FDFAC91B707D420073C979 /* ViewCells */ = {
+		C1FF26E91BBB4148000B078F /* PetitionUITests */ = {
 			isa = PBXGroup;
 			children = (
-				C1FDFACA1B707D420073C979 /* TimelineViewCell.swift */,
-				C1FDFACC1B707D420073C979 /* SearchViewCell.swift */,
+				C10264151BBB5F330035BEC1 /* PetitionUITests.swift */,
 			);
-			name = ViewCells;
-			path = Petition/ViewCells;
+			name = PetitionUITests;
+			sourceTree = "<group>";
+		};
+		C1FF26EC1BBB41D4000B078F /* PetitionTests */ = {
+			isa = PBXGroup;
+			children = (
+				C10264131BBB5F160035BEC1 /* PetitionTests.swift */,
+			);
+			name = PetitionTests;
 			sourceTree = "<group>";
 		};
 		D1DFE56F71B69B29BFA4E985 /* Pods */ = {
@@ -204,7 +205,8 @@
 		C15FDE831B57547600B77239 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Catherine McMahon";
 				TargetAttributes = {
 					C15FDE8A1B57547600B77239 = {
@@ -302,15 +304,16 @@
 				C19645F51B69909700C84E23 /* RandomColorExtension.swift in Sources */,
 				C15FDE931B57547600B77239 /* MainVC.swift in Sources */,
 				C1DFBE3F1B72990D00F5AE7E /* User.swift in Sources */,
+				C10264141BBB5F160035BEC1 /* PetitionTests.swift in Sources */,
+				C10264161BBB5F330035BEC1 /* PetitionUITests.swift in Sources */,
 				C154A1F81B5ECD20004DB4EC /* LoginVC.swift in Sources */,
 				C1DD82491B695D11000E2EF6 /* TimelineComponents.swift in Sources */,
 				C1FDFACF1B707D420073C979 /* SearchViewCell.swift in Sources */,
 				C1830F841B631300002A0726 /* Petition.swift in Sources */,
-				C14C6CBB1B6FEE1F002AA905 /* MoreVC.swift in Sources */,
+				C14C6CBB1B6FEE1F002AA905 /* SettingsVC.swift in Sources */,
 				C1FECBBD1B7016AD00599B59 /* NSCacheSwift.swift in Sources */,
 				C15FDE911B57547600B77239 /* AppDelegate.swift in Sources */,
 				C14C6CBD1B6FEE37002AA905 /* SearchVC.swift in Sources */,
-				C18622EB1B792636004FFD7B /* BounceButtonView.swift in Sources */,
 				C1FECBBF1B702C2500599B59 /* Search.swift in Sources */,
 				C1390C3F1B7D7B5D006543E1 /* colour.swift in Sources */,
 				C1FDFACE1B707D420073C979 /* TimelineViewCell.swift in Sources */,
@@ -355,6 +358,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -435,6 +439,7 @@
 				INFOPLIST_FILE = Petition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Catherine-McMahon.Activate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Petition/Petition-Bridging-Header.h";
@@ -459,6 +464,7 @@
 				INFOPLIST_FILE = Petition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Catherine-McMahon.Activate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Petition/Petition-Bridging-Header.h";

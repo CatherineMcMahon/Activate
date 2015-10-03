@@ -54,9 +54,9 @@ class LoginVC: UIViewController {
                 if user != nil {
                     
                     // MARK: Mixpanel 'Successful login'
-                    Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
-                    let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-                    mixpanel.track("Successful login")
+//                    Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+//                    let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+//                    mixpanel.track("Successful login")
                     
                     self.performSegueWithIdentifier("loginToTimeline", sender: self)
                     
@@ -69,9 +69,9 @@ class LoginVC: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
             
             // MARK: Mixpanel 'Unsuccessful login'
-            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
-            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-            mixpanel.track("Unsuccessful login")
+//            Mixpanel.sharedInstanceWithToken("03d88b8595c383af0bba420b4c054f41")
+//            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+//            mixpanel.track("Unsuccessful login")
 
             
         }
