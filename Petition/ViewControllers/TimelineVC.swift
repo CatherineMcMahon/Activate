@@ -104,12 +104,12 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             {data, response, error -> Void in
                 
                 if(error != nil) {
-                    println(error.localizedDescription)
+                    print(error!.localizedDescription)
                 }
                 var err: NSError?
                 if let jsonResult                          = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as? NSDictionary {
                     if(err != nil) {
-                        println("JSON Error \(err!.localizedDescription)")
+                        print("JSON Error \(err!.localizedDescription)")
                     }
                     
                     var arr : [Petition]                       = [Petition]()

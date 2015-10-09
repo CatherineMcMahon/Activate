@@ -77,7 +77,7 @@ class SignUpVC: UIViewController {
 //            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
 //            mixpanel.track("Successful sign up")
         } else {
-            println("can't sign up. try again")
+            print("can't sign up. try again")
         }
     }
     
@@ -102,7 +102,7 @@ class SignUpVC: UIViewController {
                     self.performSegueWithIdentifier("signUpToTimeline", sender: self)
                 }
             } else {
-                println("**sign up ERROR**")
+                print("**sign up ERROR**")
             }
         }
         } else {

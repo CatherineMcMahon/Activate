@@ -59,9 +59,9 @@ class SearchVC: UIViewController {
 
     
     func search() {
-        println(searchBar.text)
+        print(searchBar.text)
         
-        if !searchBar.text.isEmpty {
+        if !searchBar.text!.isEmpty {
             
             let urlPath                  = "https://api.whitehouse.gov/v1/petitions.json?limit=10&offset=0&body=\(searchText)"
             let url                      = NSURL(string: urlPath)
@@ -70,16 +70,16 @@ class SearchVC: UIViewController {
             if let url                   = url {
                 let task                     = session.dataTaskWithURL(url, completionHandler:
                     {data, response, error -> Void in
-                        println("Task completed")
+                        print("Task completed")
                         
                         if(error != nil) {
-                            println(error.localizedDescription)
+                            print(error!.localizedDescription)
                         }
                         var err: NSError?
                         
                         if let jsonResult            = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as? NSDictionary {
                             if(err != nil) {
-                                println("JSON Error \(err!.localizedDescription)")
+                               print("JSON Error \(err!.localizedDescription)")
                             }
                             
                             var newData                    = [Petition]()

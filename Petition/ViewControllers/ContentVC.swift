@@ -30,7 +30,7 @@ class ContentVC: UITableViewController {
     }
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
     }
     
     @IBOutlet weak var detailTitle: UILabel!
@@ -75,7 +75,7 @@ class ContentVC: UITableViewController {
 //            let mixpanel: Mixpanel = Mixpanel.sharedInstance()
 //            mixpanel.track("Sign Error")
             
-            println("user is not signed in; cannot sign petition")
+           print("user is not signed in; cannot sign petition")
         }
     }
     
@@ -101,16 +101,16 @@ class ContentVC: UITableViewController {
         
         var task                  = session.dataTaskWithRequest(request, completionHandler:
             {data, response, error -> Void in
-                println("Response: \(response)")
-                var strData               = NSString(data: data, encoding: NSUTF8StringEncoding)
-                println("Body: \(strData)")
+                print("Response: \(response)")
+                var strData               = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("Body: \(strData)")
                 var err: NSError?
                 var json                  = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as? NSDictionary
                 
                 if(err != nil) {
-                    println(err!.localizedDescription)
-                    let jsonStr               = NSString(data: data, encoding: NSUTF8StringEncoding)
-                    println("Error could not parse JSON: '\(jsonStr)'")
+                   print(err!.localizedDescription)
+                    let jsonStr               = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    print("Error could not parse JSON: '\(jsonStr)'")
                     let alert = UIAlertController(title: "Error", message: "Oops! Something went wrong.", preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                     

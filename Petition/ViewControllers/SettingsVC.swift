@@ -32,7 +32,7 @@ class SettingsVC: UITableViewController {
         PFUser.logOutInBackgroundWithBlock { (error) -> Void in
             if let error    = error {
 //                showAlert()
-                println("log out did not work")
+                print("log out did not work")
             } else {
                 self.performSegueWithIdentifier("logOut", sender: nil)
             }

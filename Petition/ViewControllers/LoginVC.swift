@@ -49,7 +49,7 @@ class LoginVC: UIViewController {
         
         if email.hasText() && password.hasText() {
             
-            PFUser.logInWithUsernameInBackground(userEmail, password:userPassword) {
+            PFUser.logInWithUsernameInBackground(userEmail!, password:userPassword!) {
                 (user: PFUser?, error: NSError?) -> Void in
                 if user != nil {
                     
@@ -61,7 +61,7 @@ class LoginVC: UIViewController {
                     self.performSegueWithIdentifier("loginToTimeline", sender: self)
                     
                 } else {
-                    println("**login ERROR**")                }
+                    print("**login ERROR**")                }
             }
         } else {
             let alert = UIAlertController(title: "Error", message: "Please fill in all the fields", preferredStyle: .Alert)
